@@ -142,7 +142,7 @@ public class MainProduk {
 ---
 
 ## Hasil Eksekusi
-(![alt text](<Cuplikan layar 2025-10-07 231739.png>))
+![alt text](<Cuplikan layar 2025-10-07 231739.png>)
 ---
 
 ## Analisis
