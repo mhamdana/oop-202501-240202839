@@ -9,13 +9,12 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 ---
 
 ## Tujuan
-(Mahasiswa memahami konsep Class dan Object serta dapat membuat class Produk dengan menerapkan Enkapsulasi (menggunakan private fields dan public accessors/mutators) serta membuat method untuk memanipulasi stok.
-)
+Mahasiswa memahami konsep Class dan Object serta dapat membuat class Produk dengan menerapkan Enkapsulasi (menggunakan private fields dan public accessors/mutators) serta membuat method untuk memanipulasi stok.
+
 
 ---
 
-## Dasar Teori
-( 
+## Dasar Teori 
 1. Class adalah blueprint yang mendefinisikan atribut dan perilaku dari objek.
 
 2. Object adalah instansiasi nyata dari class.
@@ -26,7 +25,7 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 
 ## Langkah Praktikum
-(
+
 1. Membuat class Produk.java dengan atribut private (kode, nama, harga, stok).
 
 2. Membuat constructor untuk inisialisasi awal.
@@ -35,12 +34,11 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 4. Membuat method tambahStok(int jumlah) dan kurangStok(int jumlah) dengan validasi stok.
 
-5. Membuat class MainProduk.java untuk membuat objek dan memanggil method manipulasi stok, serta menampilkan hasilnya.)
+5. Membuat class MainProduk.java untuk membuat objek dan memanggil method manipulasi stok, serta menampilkan hasilnya.
 
 ---
 
 ## Kode Program
-(Tuliskan kode utama yang dibuat, contoh:  
 
 ```Produk.java (Class Model)
 Java
@@ -141,7 +139,6 @@ public class MainProduk {
     }
 }
 ```
-)
 ---
 
 ## Hasil Eksekusi
@@ -149,7 +146,6 @@ public class MainProduk {
 ---
 
 ## Analisis
-(
 - Jelaskan bagaimana kode berjalan: Kode menginstansiasi tiga objek Produk. Pada objek pupuk, method kurangStok() diuji, dan pada panggilan kedua, berhasil memicu    validasi if karena stoknya sudah habis (0 < 40 bernilai false), sehingga mencetak pesan error dan mempertahankan stok pada nilai 0. Ini menunjukkan bahwa Enkapsulasi berjalan dengan benar, melindungi data.
 
 - Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya (Minggu 1: Paradigma)?
@@ -159,18 +155,14 @@ Minggu ini fokus pada integritas data melalui Enkapsulasi. Pada Minggu 1 (Prosed
 Kendala: Mencoba memodifikasi atribut stok langsung dari MainProduk (misalnya pPupuk.stok = 5), yang akan menghasilkan compile error karena atribut bersifat private.
 Cara Mengatasi: Menggunakan method public yang telah disediakan (setStok(), kurangStok()) dan memastikan semua logika bisnis (validasi stok minimum) ditempatkan di dalam class Produk itu sendiri.
 
-)
 ---
 
 ## Kesimpulan
-(*Praktikum Minggu 2 berhasil mengimplementasikan Class, Object, dan Enkapsulasi. Dengan membatasi akses langsung ke data dan menyertakan validasi dalam method seperti kurangStok(), integritas data inventaris produk terjaga secara fundamental, menjadikan program lebih aman, terstruktur, dan sesuai dengan prinsip utama Pemrograman Berorientasi Objek.
-
-*)
+*Praktikum Minggu 2 berhasil mengimplementasikan Class, Object, dan Enkapsulasi. Dengan membatasi akses langsung ke data dan menyertakan validasi dalam method seperti kurangStok(), integritas data inventaris produk terjaga secara fundamental, menjadikan program lebih aman, terstruktur, dan sesuai dengan prinsip utama Pemrograman Berorientasi Objek.*
 
 ---
 
 ## Quiz
-(
 1. [Mengapa keyword private diperlukan dalam class Produk?]
    
    **Jawaban:** Untuk menerapkan Enkapsulasi, melindungi atribut (data) seperti stok agar tidak diubah sembarangan dari luar class, dan memaksa pengguna untuk mengaksesnya melalui method kontrol (getter/setter).
@@ -181,4 +173,4 @@ Cara Mengatasi: Menggunakan method public yang telah disediakan (setStok(), kura
 
  3. [Jelaskan peran constructor dalam class Produk!]
    **Jawaban:** Constructor digunakan untuk menginisialisasi objek baru. Ini memastikan bahwa setiap objek Produk segera memiliki nilai yang valid (kode, nama, harga, dan stok awal) segera setelah dibuat menggunakan keyword new.
-)
+
