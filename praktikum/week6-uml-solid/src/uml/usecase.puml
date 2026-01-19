@@ -1,0 +1,37 @@
+@startuml
+left to right direction
+skinparam shadowing false
+
+actor "Kasir" as K
+actor "Admin" as A
+
+rectangle "Sistem Agri-POS" {
+    ' Daftar semua Use Case langsung di sini
+    usecase "Login & Hak Akses" as UC1
+    usecase "Kelola Data Produk" as UC2
+    usecase "Update Stok Pertanian" as UC3
+    usecase "Input Keranjang Belanja" as UC4
+    usecase "Hitung Total Transaksi" as UC5
+    usecase "Proses Pembayaran\n(Tunai/E-Wallet)" as UC6
+    usecase "Cetak Struk" as UC7
+    usecase "Lihat Laporan Penjualan" as UC8
+}
+
+' Hubungan Aktor Admin
+A --> UC1
+A --> UC2
+A --> UC3
+A --> UC8
+
+' Hubungan Aktor Kasir
+K --> UC1
+K --> UC4
+K --> UC5
+K --> UC6
+K --> UC7
+
+' Hubungan antar Use Case (Relasi Logika)
+UC4 ..> UC5 : <<include>>
+UC6 ..> UC7 : <<include>>
+
+@enduml

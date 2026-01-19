@@ -1,0 +1,61 @@
+@startuml
+skinparam monochrome true
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linestyle ortho
+
+' 1. Single Responsibility: Memisahkan Produk, Transaksi, dan Laporan
+class Produk {
+    - kodeProduk: String
+    - nama: String
+    - harga: double
+    - stok: int
+    + kurangiStok(jumlah: int)
+    + updateHarga(hargaBaru: double)
+}
+
+class Keranjang {
+    - daftarItem: List<Produk>
+    + tambahProduk(p: Produk)
+    + hapusProduk(p: Produk)
+    + hitungTotal(): double
+}
+
+' 2. Open/Closed & Dependency Inversion: Menggunakan Interface untuk Pembayaran
+interface IPembayaran {
+    + prosesBayar(total: double): boolean
+}
+
+class BayarTunai {
+    - jumlahDiterima: double
+    + prosesBayar(total: double): boolean
+    + hitungKembalian(total: double): double
+}
+
+class BayarEWallet {
+    - idAkun: String
+    + prosesBayar(total: double): boolean
+}
+
+' 3. Transaksi bergantung pada Abstraksi (IPembayaran), bukan kelas konkret
+class Transaksi {
+    - idTransaksi: String
+    - tanggal: Date
+    - totalHarga: double
+    + selesaikanTransaksi(metode: IPembayaran)
+}
+
+class LaporanPenjualan {
+    + buatLaporanHarian()
+    + buatLaporanPeriodik(tglMulai: Date, tglSelesai: Date)
+}
+
+' Relasi
+Keranjang "1" *-- "many" Produk : berisi
+Transaksi "1" o-- "1" Keranjang : menggunakan
+Transaksi ..> IPembayaran : memanggil
+IPembayaran <|.. BayarTunai : implementasi
+IPembayaran <|.. BayarEWallet : implementasi
+LaporanPenjualan ..> Transaksi : merangkum
+
+@enduml

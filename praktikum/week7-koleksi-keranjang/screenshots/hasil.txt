@@ -1,0 +1,26 @@
+Hello, I am [Nama]-[NIM] (Week7)
+
+--- ArrayList Cart Example ---
+Isi Keranjang:
+- P01 Beras = 50000.0
+- P02 Pupuk = 30000.0
+- P03 Benih = 15000.0
+Total: 95000.0
+
+Removing P01 (by code)
+Isi Keranjang:
+- P02 Pupuk = 30000.0
+- P03 Benih = 15000.0
+Total: 45000.0
+
+--- Map Cart Example ---
+Isi Keranjang (Map):
+- P02 Pupuk x1
+- P01 Beras x2
+Total: 130000.0
+
+Removing one P01
+Isi Keranjang (Map):
+- P02 Pupuk x1
+- P01 Beras x1
+Total: 80000.0

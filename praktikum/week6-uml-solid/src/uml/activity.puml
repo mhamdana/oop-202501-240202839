@@ -1,0 +1,62 @@
+@startuml
+' Mengatur gaya garis agar siku-siku (Orthogonal)
+skinparam linestyle ortho
+skinparam monochrome true
+skinparam shadowing false
+
+|Pelanggan|
+start
+:Serahkan barang ke kasir;
+
+|Kasir|
+:Scan item dan mulai checkout;
+
+|POS System|
+:Ambil daftar item dari Cart;
+:Hitung total belanja;
+
+|Pelanggan|
+:Pilih metode pembayaran;
+
+|Kasir|
+:Menginput metode ke sistem;
+
+|POS System|
+if (Metode = E-Wallet?) then (ya)
+    |PaymentService|
+    :Validasi saldo e-wallet;
+    if (Saldo cukup?) then (kurang)
+        |POS System|
+        :Tampilkan error "Saldo tidak cukup";
+        |Kasir|
+        :Minta pelanggan memilih tunai;
+        |Pelanggan|
+        :Berikan uang tunai;
+        |Kasir|
+        :Input uang tunai;
+        |PaymentService|
+        goto bayar_tunai
+    else (cukup)
+        :Kurangi saldo;
+    endif
+else (Tunai)
+    |Pelanggan|
+    :Berikan uang tunai;
+    |Kasir|
+    :Input uang tunai;
+    |PaymentService|
+    label bayar_tunai
+    :Validasi uang tunai;
+    :Proses pembayaran tunai;
+endif
+
+|POS System|
+:Simpan transaksi;
+
+|Kasir|
+:Tampilkan / Cetak Struk;
+
+|Pelanggan|
+:Ambil struk;
+stop
+@enduml

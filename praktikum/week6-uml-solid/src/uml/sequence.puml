@@ -1,0 +1,44 @@
+@startuml
+' Konfigurasi gaya minimalis
+skinparam sequenceMessageAlign direction
+skinparam monochrome true
+skinparam shadowing false
+skinparam participantPadding 30
+skinparam boxPadding 10
+
+actor "Pelanggan" as P
+actor "Kasir" as K
+participant "Sistem POS" as S
+participant "Keranjang" as C
+participant "LayananPembayaran" as LP
+
+' Alur Utama
+P -> K : Serahkan barang belanjaan
+K -> S : mulaiCheckout()
+S -> C : ambilDaftarBarang()
+C --> S : daftarBarang
+S -> LP : hitungTotal()
+LP --> S : totalHarga
+
+' Skenario E-Wallet
+P -> K : Pilih E-Wallet
+K -> S : pilihMetodeBayar("E-Wallet")
+S -> LP : validasiEWallet(totalHarga)
+
+' Menggunakan Note atau Label sebagai pengganti kotak Alt agar bersih
+note over LP, S : Jika Saldo Kurang
+LP -->> S : statusGagal
+S -->> K : tampilkanPesan("Saldo Kurang")
+K -->> P : Minta bayar tunai
+
+' Alur Berlanjut ke Tunai
+note over LP, S : Jika Saldo Cukup / Bayar Tunai
+P -> K : Berikan uang tunai
+K -> S : pilihMetodeBayar("Tunai")
+S -> LP : prosesBayarTunai()
+LP -> S : statusBerhasil
+S -> S : simpanTransaksi()
+S -> K : tampilkanStruk()
+K -> P : Berikan struk fisik
+
+@enduml
