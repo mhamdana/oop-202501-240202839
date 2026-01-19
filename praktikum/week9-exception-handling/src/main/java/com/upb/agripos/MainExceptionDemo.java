@@ -5,8 +5,8 @@ public class MainExceptionDemo {
         // Ganti dengan identitas asli Anda
         System.out.println("==========================================");
         System.out.println("Program Agri-POS: Exception Handling Demo");
-        System.out.println("Nama : [Nama Anda]");
-        System.out.println("NIM  : [NIM Anda]");
+        System.out.println("Nama : Muhammad Khamdan Azkiya");
+        System.out.println("NIM  : 240202839");
         System.out.println("==========================================\n");
 
         // 1. Inisialisasi Data (Model)
