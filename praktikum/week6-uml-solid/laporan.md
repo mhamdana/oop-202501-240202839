@@ -2,9 +2,9 @@
 Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : M Khamdan A
+- NIM   : 240202839
+- Kelas : 3ikra
 
 ---
 
@@ -28,20 +28,91 @@ Contoh:
 ---
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+1. UML (Unified Modeling Language) adalah bahasa standar untuk memvisualisasikan, menspesifikasikan, membangun, dan mendokumentasikan artefak dari sistem perangkat lunak.
+
+2. Use Case Diagram menggambarkan interaksi antara aktor (pengguna sistem) dengan fungsionalitas (use case) yang disediakan sistem.
+
+3. Class Diagram menunjukkan struktur statis sistem dalam bentuk kelas, atribut, operasi, dan hubungan antar kelas.
+
+4. Prinsip SOLID adalah lima prinsip desain yang bertujuan membuat perangkat lunak lebih mudah dipahami, fleksibel, dan dapat dipelihara.
+
+5. Dependency Inversion Principle menyatakan bahwa modul tingkat tinggi tidak boleh bergantung pada modul tingkat rendah, tetapi keduanya harus bergantung pada abstraksi.
 
 ---
 
 ## Kode Program
 (Tuliskan kode utama yang dibuat, contoh:  
 
-```java
-// Contoh
-Produk p1 = new Produk("BNH-001", "Benih Padi", 25000, 100);
-System.out.println(p1.getNama());
+```puml
+activity.puml
+@startuml
+' Mengatur gaya garis agar siku-siku (Orthogonal)
+skinparam linestyle ortho
+skinparam monochrome true
+skinparam shadowing false
+
+|Pelanggan|
+start
+:Serahkan barang ke kasir;
+
+|Kasir|
+:Scan item dan mulai checkout;
+
+|POS System|
+:Ambil daftar item dari Cart;
+:Hitung total belanja;
+
+|Pelanggan|
+:Pilih metode pembayaran;
+
+|Kasir|
+:Menginput metode ke sistem;
+
+|POS System|
+if (Metode = E-Wallet?) then (ya)
+    |PaymentService|
+    :Validasi saldo e-wallet;
+    if (Saldo cukup?) then (kurang)
+        |POS System|
+        :Tampilkan error "Saldo tidak cukup";
+        |Kasir|
+        :Minta pelanggan memilih tunai;
+        |Pelanggan|
+        :Berikan uang tunai;
+        |Kasir|
+        :Input uang tunai;
+        |PaymentService|
+        goto bayar_tunai
+    else (cukup)
+        :Kurangi saldo;
+    endif
+else (Tunai)
+    |Pelanggan|
+    :Berikan uang tunai;
+    |Kasir|
+    :Input uang tunai;
+    |PaymentService|
+    label bayar_tunai
+    :Validasi uang tunai;
+    :Proses pembayaran tunai;
+endif
+
+|POS System|
+:Simpan transaksi;
+
+|Kasir|
+:Tampilkan / Cetak Struk;
+
+|Pelanggan|
+:Ambil struk;
+stop
+@enduml
+**class.puml**
+
+sequence.puml
+
+usecase.puml
+
 ```
 )
 ---
