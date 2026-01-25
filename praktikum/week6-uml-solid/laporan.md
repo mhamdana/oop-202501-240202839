@@ -9,9 +9,13 @@ Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+Mahasiswa mampu mengidentifikasi kebutuhan sistem ke dalam diagram UML
 
+Mahasiswa mampu menggambar UML Class Diagram dengan relasi antar class yang tepat
+
+Mahasiswa mampu menjelaskan prinsip desain OOP (SOLID)
+
+Mahasiswa mampu menerapkan minimal dua prinsip SOLID dalam kode program
 ---
 
 ## Dasar Teori
