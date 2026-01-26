@@ -1,0 +1,28 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx.base.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx.controls.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx.fxml.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx.graphics.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx.media.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx.swing.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx.web.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/javafx-swt.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/jdk.jsobject.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/jfx.incubator.input.jar",
+        "openjfx-25.0.2_windows-x64_bin-sdk/javafx-sdk-25.0.2/lib/jfx.incubator.richtext.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx.base.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx.controls.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx.fxml.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx.graphics.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx.media.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx.swing.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx.web.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\javafx-swt.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\jdk.jsobject.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\jfx.incubator.input.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\jfx.incubator.richtext.jar",
+        "c:\\Users\\anj72\\Documents\\oop-202501-240202839\\praktikum\\lib\\postgresql-42.7.9 (1).jar"
+    ]
+}
